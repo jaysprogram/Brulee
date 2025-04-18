@@ -10,16 +10,38 @@ const castellar = localFont({
 //landing page
 export default function LandingPage() {
   return (
+
     
     <div className="flex flex-col items-center justify-start min-h-screen p-10 pb-200 gap-45 sm:p-20 rfont-[family-name:var(--font-calibri)]">
       
 
       <main className="flex flex-col items-center gap-12">
+
+
+       {/*navbar*/}
+       <nav className = "flex justify-between items-center">
+
+         
+          <div className="flex gap-12">
+
+            <ul className = "flex items-center gap-[15vw] text-black">
+              <li>
+                <button className= "hover:text-yellow-500 transition-all duration-500 ease-in-out"> Home</button>
+
+              </li>
+
+              <li> {/*this one and the products button are too close to the title pls help*/}
+                <button className = "hover:text-yellow-500 transition-all duration-500 ease-in-out"> About</button>
+              </li>
+
+            </ul>
+
+           </div>
         
 
         <div className = "relative inline-block">   {/* "inline relative-block" */}
 
-            {/* center the freaking rectangle */}
+            {/* centered rectangle :D */}
             <div className = "absolute left-0 right-0 top-1/2 transform -translate-y-1/2 h-3 bg-yellow-400 -z-10"> </div> 
             
 
@@ -31,15 +53,43 @@ export default function LandingPage() {
         
         </div>
 
-        <div className = "flex flex-col">
 
-          <Image>
-          {/**add src, alt (for alternative text), and className to edit the image */}
-          </Image>
+        <div className = "flex gap-12">
 
-        </div>
+            <ul className = "flex items-center gap-[15vw] text-black">
+
+              <li>
+                <button className = "hover:text-yellow-500 transition-all duration-500 ease-in-out"> Products</button>
+              </li>
+
+              <li>
+                <button className = "hover:text-yellow-500 transition-all duration-500 ease-in-out"> Services</button>
+              
+              </li>
+
+            </ul>
+
+            </div>
+
+
+       </nav>
+
+
+
+       <div className = "">
+     
+        
+        <img src = "/jewelry-pic/chainBracelet.png" className= "w-100 l-200">
+
+        </img>
+          {/*add src, alt (for alternative text), and className to edit the image */}
+        
+    
+       </div>
     
       </main> 
+
+      
 
 
       {/* Footer */}
@@ -114,10 +164,10 @@ export default function LandingPage() {
             <h3 className = "tracking-wide font-semibold mb-4">
               Quick Link
             </h3>
-            <ul class = "list-none mt-6 space-y-2">
+            <ul className = "list-none mt-6 space-y-2">
               <li>
                 <a href = "#"
-                  class = "hover:text-yellow-400 transition-all duration-500 ease-in-out"
+                  className = "hover:text-yellow-400 transition-all duration-500 ease-in-out"
                 >
                   Home
 
@@ -126,7 +176,7 @@ export default function LandingPage() {
               </li>
               <li>
                 <a href = "#"
-                  class = "hover:text-yellow-400 transition-all duration-500 ease-in-out"
+                  className = "hover:text-yellow-400 transition-all duration-500 ease-in-out"
                 >
                   About Us
 
@@ -135,7 +185,7 @@ export default function LandingPage() {
               </li>
               <li>
                 <a href = "#"
-                  class = "hover:text-yellow-400 transition-all duration-500 ease-in-out"
+                  className = "hover:text-yellow-400 transition-all duration-500 ease-in-out"
                 >
                   Products
 
