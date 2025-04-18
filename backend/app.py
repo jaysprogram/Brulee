@@ -4,6 +4,7 @@ from models import db
 
 ## ALL of the blueprints
 from routes.products import products_bp
+from routes.users import users_bp
 
 app = Flask(__name__)
 CORS(app)
@@ -12,8 +13,13 @@ CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///brulee.db'
 db.init_app(app)
 
+# this will create all tables (if they don't exist) based on your models
+with app.app_context():
+    db.create_all()
+
 
 app.register_blueprint(products_bp)
+app.register_blueprint(users_bp)
 
 @app.route("/")
 def home():
@@ -21,4 +27,4 @@ def home():
 
 
 if __name__ == "__main__" :
-    app.run(debug=True,port=3002)
+    app.run(debug=True,port=5000)
