@@ -42,3 +42,4 @@ next-env.d.ts
 
 # ADD THE STUFF YOU DONT WANT TO PUSH HERE
 __Pycache__
+venv
