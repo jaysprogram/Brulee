@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+      // Project root for absolute imports
+      "baseUrl": ".",
+      // Map "@/anything" → "./anything"
+      "paths": {
+        "@/*": ["*"]
+      }
+    }
+  }
+  
