@@ -1,8 +1,6 @@
 // components/NavBar.js
 import Link from "next/link";
 import localFont from "next/font/local";
-
-import Link from "next/link"
  
 import { Button } from "@/components/ui/button"
  
