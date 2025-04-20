@@ -2,8 +2,6 @@
 import Link from "next/link";
 import localFont from "next/font/local";
  
-import { Button } from "@/components/ui/button"
- 
 const castellar = localFont({
   src: "../src/app/fonts/Castellar.ttf", // adjust this path to wherever you keep your .ttf
   display: "swap",
