@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import NavBar from "../../components/Navbar";
 
 export default function Product() {
   // mock product data
@@ -21,28 +22,7 @@ export default function Product() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Navbar */}
-      <nav className="bg-white shadow">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-          <h1 className="text-xl font-bold">MyStore</h1>
-          <ul className="flex space-x-6 text-gray-700">
-            <li>
-              <a href="/" className="hover:text-blue-600">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="/products" className="hover:text-blue-600">
-                Products
-              </a>
-            </li>
-            <li>
-              <a href="/cart" className="hover:text-blue-600">
-                Cart
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <NavBar/>
 
       {/* Product Details */}
       <main className="max-w-4xl mx-auto p-8">
