@@ -8,19 +8,18 @@ export default function LandingPage() {
 
   return (
 
-    <div className="bg-white flex flex-col items-center justify-start min-h-screen rfont-[family-name:var(--font-calibri)]">
-      {/*navbar*/}
-      <NavBar />
-      <main className="flex flex-col items-center w-full">
-        
-      <ProductCard/>
+    <div className="bg-white flex flex-col min-h-screen rfont-[family-name:var(--font-calibri)]">
+    {/* Navbar */}
+    <NavBar />
 
-      </main>
+    {/* Main Content */}
+    <main className="flex flex-col items-center w-full flex-1">
+      <ProductCard />
+    </main>
 
-      {/* Footer */}
-      <Footer />
-
-    </div>
+    {/* Footer */}
+    <Footer />
+  </div>
 
   );
 }
