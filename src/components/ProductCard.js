@@ -39,7 +39,7 @@ export default function ProductCard() {
             <div className="flex items-start gap-10">
                 {/* Product Image */}
                 <img
-                    src={`/${product.image}`}
+                    src={`${product.image}`}
                     className={`w-80 h-80 object-cover rounded-xl border-2 border-gray-300 transition-opacity duration-500 ${fade ? 'opacity-100' : 'opacity-0'}`}
                     alt={product.name}
                 />
