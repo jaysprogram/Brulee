@@ -15,19 +15,19 @@ with app.app_context():
                 name="Elegant Chain Bracelet",
                 price=199.99,
                 description="A luxurious gold-plated chain bracelet, perfect for formal occasions or daily elegance.",
-                image="jewelry-pic/chainBracelet.png"
+                image="https://res.cloudinary.com/dbgsublmc/image/upload/v1745450302/chainBracelet_fatvnw.png"
             ),
             Product(
                 name="White Flower Bracelet",
                 price=299.99,
                 description="Sparkling diamond bracelet to elevate any outfit.",
-                image="jewelry-pic/whiteFlower.png"
+                image="https://res.cloudinary.com/dbgsublmc/image/upload/v1745609778/whiteFlower_v5ubsd.png"
             ),
             Product(
-                name="Buterfly Ear Cuff",
+                name="Butterfly Ear Cuff",
                 price=249.99,
                 description="A cut but elegant butterfly.",
-                image="jewelry-pic/earCuff.png"
+                image="https://res.cloudinary.com/dbgsublmc/image/upload/v1745609716/earCuff_qhe3c6.png"
             )
         ]
 
