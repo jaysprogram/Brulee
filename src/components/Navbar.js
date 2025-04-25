@@ -1,16 +1,51 @@
-// components/NavBar.js
+'use client'
+import { useState } from "react";
 import Link from "next/link";
 import localFont from "next/font/local";
- 
+import { FaUser, FaSearch, FaShoppingCart } from "react-icons/fa";
+
 const castellar = localFont({
-  src: "../src/app/fonts/Castellar.ttf", // adjust this path to wherever you keep your .ttf
-  display: "swap",
+  src: '../../public/fonts/Castellar.ttf',
+  display: 'swap',
 });
 
 export default function NavBar() {
+  const [showSearch, setShowSearch] = useState(false);
+
   return (
 
-    <nav className="flex items-center justify-evenly w-full px-8 text-black font-serif text-[20px] font-medium">
+
+    <nav className="bg-white flex pt-10 items-center justify-evenly w-full  text-black max-w-7xl mx-auto font-serif text-[20px] font-medium">
+
+      <div className="absolute top-4 right-8 flex items-center gap-4">
+        {/* Search Button */}
+        <FaSearch
+          className="text-gray-700 cursor-pointer hover:text-yellow-500 transition"
+          onClick={() => setShowSearch(!showSearch)}
+        />
+
+        {/* User Icon - Navigates to Login */}
+        <Link href="/account/login">
+          <FaUser className="text-gray-700 cursor-pointer hover:text-yellow-500 transition" />
+        </Link>
+
+        {/* Shopping Cart Icon - Navigates to Cart */}
+        <Link href="/cart">
+          <FaShoppingCart className="text-gray-700 cursor-pointer hover:text-yellow-500 transition" />
+        </Link>
+      </div>
+
+
+      {/* Search Bar Popup */}
+      {showSearch && (
+        <div className="absolute top-14 right-8 bg-white border border-gray-300 rounded-md p-2 shadow-md">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="bg-transparent focus:outline-none px-2"
+          />
+        </div>
+      )}
 
       <Link href="/">
         <button className="hover:text-yellow-500 transition-all duration-500 ease-in-out ">
