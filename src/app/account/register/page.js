@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { User, Lock, Eye, EyeOff } from 'lucide-react';
+import NavBar from '../../../components/Navbar';
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -57,6 +58,7 @@ export default function RegisterPage() {
 
   return (
     <main className="min-h-screen flex items-center justify-center bg-black text-white px-4">
+      <NavBar/>
       <div className="w-full max-w-sm rounded-xl shadow-lg overflow-hidden">
         <div className="bg-[#d4af37] py-5 text-center">
           <h1 className="text-xl font-extrabold uppercase tracking-wide text-black">

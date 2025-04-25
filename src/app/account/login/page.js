@@ -2,14 +2,15 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { User, Lock } from 'lucide-react';        // already present in shadcn/lucide
+import { User, Lock } from 'lucide-react';
+import NavBar from '../../../components/Navbar';
 
 export default function LoginPage() {
-  const router              = useRouter();
-  const [email, setEmail]   = useState('');
+  const router = useRouter();
+  const [email, setEmail] = useState('');
   const [password, setPass] = useState('');
-  const [msg, setMsg]       = useState('');
-  const [loading, setLoad]  = useState(false);
+  const [msg, setMsg] = useState('');
+  const [loading, setLoad] = useState(false);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -17,10 +18,10 @@ export default function LoginPage() {
     setLoad(true);
 
     try {
-      const res  = await fetch('http://127.0.0.1:5000/login', {
-        method : 'POST',
+      const res = await fetch('http://127.0.0.1:5000/login', {
+        method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body   : JSON.stringify({ email, password })
+        body: JSON.stringify({ email, password })
       });
       const data = await res.json();
       if (res.ok) {
@@ -38,14 +39,19 @@ export default function LoginPage() {
 
   /* ————————————————————— UI ————————————————————— */
   return (
+
     <main className="min-h-screen flex items-center justify-center bg-black text-white px-4">
+      <NavBar />
       {/* Card */}
       <div className="w-full max-w-sm rounded-xl shadow-lg overflow-hidden">
+
         {/* Card header strip */}
         <div className="bg-[#d4af37] py-5 text-center">
+
           <h1 className="text-xl font-extrabold uppercase tracking-wide text-black">
             Login Form
           </h1>
+
         </div>
 
         {/* Card body */}
@@ -53,11 +59,10 @@ export default function LoginPage() {
           {/* status message */}
           {msg && (
             <p
-              className={`text-center text-sm ${
-                msg.toLowerCase().includes('logged')
+              className={`text-center text-sm ${msg.toLowerCase().includes('logged')
                   ? 'text-emerald-500'
                   : 'text-rose-500'
-              }`}
+                }`}
             >
               {msg}
             </p>
