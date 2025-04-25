@@ -8,7 +8,7 @@ export default function ProductCard() {
     const [fade, setFade] = useState(true);
 
     useEffect(() => {
-        fetch("https://brulee-backend.onrender.com/api/products")
+        fetch("https://brulee-backend-ph5c.onrender.com/api/products")
             .then(response => response.json())
             .then(data => setProducts(data))
             .catch(err => console.error("Failed to fetch products:", err));

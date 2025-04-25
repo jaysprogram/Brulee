@@ -18,7 +18,7 @@ export default function LoginPage() {
     setLoad(true);
 
     try {
-      const res = await fetch('https://brulee-backend.onrender.com/login', {
+      const res = await fetch('https://brulee-backend-ph5c.onrender.com/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })

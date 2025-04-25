@@ -34,7 +34,7 @@ export default function RegisterPage() {
     setMsg('');
     setLoading(true);
     try {
-      const res = await fetch('https://brulee-backend.onrender.com/register', {
+      const res = await fetch('https://brulee-backend-ph5c.onrender.com/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ fName, lName, email, password }),
