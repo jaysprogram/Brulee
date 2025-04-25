@@ -5,7 +5,7 @@ import localFont from "next/font/local";
 import { FaUser, FaSearch, FaShoppingCart } from "react-icons/fa";
 
 const castellar = localFont({
-  src: '../../public/fonts/castellar.ttf',
+  src: '../../public/fonts/Castellar.ttf',
   display: 'swap',
 });
 
