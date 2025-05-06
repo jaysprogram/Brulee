@@ -2,6 +2,27 @@
 
 @tailwind utilities;
 
+@layer components {
+  /* the outer wrapper */
+  .info-card {
+    @apply flex items-center border rounded-lg p-4 shadow-sm hover:shadow-md transition;
+  }
+
+  /* the icon container */
+  .info-card-icon {
+    @apply p-2 rounded-full;
+  }
+
+  /* title and description */
+  .info-card-content {}
+  .info-card-title {
+    @apply text-lg font-semibold;
+  }
+  .info-card-desc {
+    @apply text-sm text-gray-600;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #fbc560ff;
@@ -28,4 +49,8 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+  box-shadow: 0px 2px 3px 0px rgba(0,0,0,.2);
 }

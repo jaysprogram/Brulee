@@ -3,6 +3,11 @@ import Link from "next/link";
 import localFont from "next/font/local";
 import Image from "next/image";
 
+const castellar = localFont({
+  src: '../../public/fonts/Castellar.ttf',
+  display: 'swap',
+});
+
 export default function Footer() {
   return (
 <footer className="bg-[#1c1c1e] text-white py-12 px-6 mt-40 w-full">  {/*text-center text text-sm text-gray-500 py-4 border-t mt-10     © {new Date().getFullYear()} Brûlée. All rights reserved. */}
@@ -11,9 +16,17 @@ export default function Footer() {
   {/* Column 1: Logo and Description of Footer */}
 
   <div>
-    <h2 className="text-lg font-bold mb-2">
-      Logo
-    </h2>
+  <div className="relative inline-block">
+        <div className="relative p-4">
+          {/* yellow highlight */}
+
+          <h1
+            className={`${castellar.className} text-5xl font-medium text-white relative`}
+          >
+            Brûlée
+          </h1>
+        </div>
+      </div>
     <p className="mt-3">
       Welcome to Brûlée, a space filled with beautifully designed jewelry made just for you.
     </p>
