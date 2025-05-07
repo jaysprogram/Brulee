@@ -1,8 +1,10 @@
 'use client'
+import { SignInButton, UserButton, SignedOut,SignedIn, SignIn } from "@clerk/nextjs";
 import { useState } from "react";
 import Link from "next/link";
 import localFont from "next/font/local";
 import { FaUser, FaSearch, FaShoppingCart } from "react-icons/fa";
+
 
 const castellar = localFont({
   src: '../../public/fonts/Castellar.ttf',
@@ -25,9 +27,17 @@ export default function NavBar() {
         />
 
         {/* User Icon - Navigates to Login */}
-        <Link href="/account/login">
-          <FaUser className="text-gray-700 cursor-pointer hover:text-yellow-500 transition" />
-        </Link>
+          <SignedIn>
+          <UserButton/>
+          </SignedIn>
+          {/*if not signed show user sign in button*/}
+          <SignedOut>
+            <SignInButton >
+              <button className="font-bold text-gray-700 cursor-pointer hover:text-yellow-500 transition">Sign in</button>
+            </SignInButton>
+          </SignedOut>
+          
+        
 
         {/* Shopping Cart Icon - Navigates to Cart */}
         <Link href="/cart">

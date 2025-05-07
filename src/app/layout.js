@@ -1,3 +1,4 @@
+import { ClerkProvider, SignedIn, SignedOut, SignIn, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -16,14 +17,19 @@ export const metadata = {
   description: "Description",
 };
 
-export default function RootLayout({ children }) {
+
+
+export default function RootLayout({ children}) {
   return (
+    <ClerkProvider>
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        
         {children}
       </body>
     </html>
+    </ClerkProvider>
   );
 }

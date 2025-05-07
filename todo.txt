@@ -1,0 +1,8 @@
+Reyjay 
+[x] add sign in button in top right when user is not signed in
+[x] add userbutton when user is signed in
+[]  obtain unique userId for database processing
+[]  change login page to match our websites theme
+
+
+see docs for more info https://clerk.com/docs/references/nextjs/auth
