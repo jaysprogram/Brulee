@@ -17,8 +17,21 @@ export default function NavBar() {
   return (
 
 
-    <nav className="bg-white flex pt-10 items-center justify-evenly w-full  text-black max-w-7xl mx-auto font-serif text-[20px] font-medium">
-
+    <nav className="bg-white w-full">
+      <div     className="
+      flex
+      justify-center
+      items-center
+      pt-10
+      text-black
+      font-serif
+      text-[20px]
+      font-medium
+      gap-x-4
+      sm:gap-x-6
+      md:gap-x-8
+      lg:gap-x-12
+    ">
       <div className="absolute top-4 right-8 flex items-center gap-4">
         {/* Search Button */}
         <FaSearch
@@ -57,9 +70,9 @@ export default function NavBar() {
         </div>
       )}
 
-      <Link href="/">
+      <Link href="/On_Sale">
         <button className="hover:text-yellow-500 transition-all duration-500 ease-in-out ">
-          Home
+          On Sale
         </button>
       </Link>
 
@@ -73,6 +86,7 @@ export default function NavBar() {
 
       <Divider />
 
+      <Link href="/">
       <div className="relative inline-block">
         <div className="relative bg-white p-4">
           {/* yellow highlight */}
@@ -84,7 +98,7 @@ export default function NavBar() {
           </h1>
         </div>
       </div>
-
+      </Link>
       <Divider />
 
       <Link href="/products">
@@ -100,6 +114,7 @@ export default function NavBar() {
           Services
         </button>
       </Link>
+      </div>
     </nav>
   );
 }
