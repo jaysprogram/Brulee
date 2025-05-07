@@ -7,8 +7,8 @@ export default function SignInPage() {
     <div className="flex min-h-screen items-center justify-center bg-gray-50">
       <SignIn
         routing="path"
-        path="/account/sign-in"
-        signUpURL = "/account/sign-up"
+        path="account/sign-in"
+        signUpURL = "account/sign-up"
         appearance={{
           // === Override Clerk’s CSS vars ===
           variables: {

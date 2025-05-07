@@ -10,7 +10,10 @@ export default function LandingPage() {
 
     <div className="bg-white flex flex-col min-h-screen rfont-[family-name:var(--font-calibri)]">
     {/* Navbar */}
+    <header>
     <NavBar />
+    </header>
+    
 
     {/* Main Content */}
     <main className="flex flex-col items-center w-full flex-1">
