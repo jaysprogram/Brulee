@@ -14,29 +14,28 @@ export default function NavBar() {
 
   return (
 
-
     <nav className="bg-white flex pt-10 items-center justify-evenly w-full  text-black max-w-7xl mx-auto font-serif text-[20px] font-medium">
 
       <div className="absolute top-4 right-8 flex items-center gap-4">
-        {/* Search Button */}
+        {}
         <FaSearch
           className="text-gray-700 cursor-pointer hover:text-yellow-500 transition"
           onClick={() => setShowSearch(!showSearch)}
         />
 
-        {/* User Icon - Navigates to Login */}
+        {}
         <Link href="/account/login">
           <FaUser className="text-gray-700 cursor-pointer hover:text-yellow-500 transition" />
         </Link>
 
-        {/* Shopping Cart Icon - Navigates to Cart */}
-        <Link href="/cart">
+        {}
+        <Link href=".././cart">
           <FaShoppingCart className="text-gray-700 cursor-pointer hover:text-yellow-500 transition" />
         </Link>
       </div>
 
 
-      {/* Search Bar Popup */}
+      {}
       {showSearch && (
         <div className="absolute top-14 right-8 bg-white border border-gray-300 rounded-md p-2 shadow-md">
           <input
@@ -65,7 +64,7 @@ export default function NavBar() {
 
       <div className="relative inline-block">
         <div className="relative bg-white p-4">
-          {/* yellow highlight */}
+          {}
           <div className="absolute left-0 right-0 top-1/2 transform -translate-y-1/2 h-3 bg-yellow-400 z-0" />
           <h1
             className={`${castellar.className} text-5xl font-medium text-black relative z-10`}

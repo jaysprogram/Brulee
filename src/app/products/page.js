@@ -1,68 +1,89 @@
+
 "use client";
 
 import React from "react";
+import { products } from "./product";
+import Link from "next/link";
 import NavBar from "../../components/Navbar";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../cart/cart";
+import { useRouter } from "next/navigation"; 
+import { MdOutlineShoppingCart } from "react-icons/md";
 
-export default function Product() {
-  // mock product data
-  const product = {
-    id: 1,
-    name: "Awesome Widget",
-    description:
-      "This widget does everything you ever dreamed of—and a little more. Crafted with precision and care.",
-    price: 19.99,
-    image: "/images/widget.jpg", // put a placeholder in /public/images/widget.jpg
-    features: [
-      "Feature One: Ultra‑durable",
-      "Feature Two: Super efficient",
-      "Feature Three: Compact design",
-    ],
+export default function ProductsPage() {
+  const dispatch = useDispatch();
+  const router = useRouter();
+
+  const handleAddToCart = async (productId) => {
+   
+    dispatch(addToCart({ productId, quantity: 1 }));
+
+    try {
+      const res = await fetch("https://brulee-backend-ph5c.onrender.com/api/products", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          productId,
+          quantity: 1,
+        }),
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        console.error("Backend error:", data.error);
+      } else {
+        console.log("Added to DB:", data.cartItem);
+      }
+
+     
+      router.push("/cart");
+    } catch (err) {
+      console.error("Fetch error:", err);
+    }
   };
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Navbar */}
-      <NavBar/>
+      <NavBar />
 
-      {/* Product Details */}
-      <main className="max-w-4xl mx-auto p-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white rounded-lg shadow">
-          <img
-            src={product.image}
-            alt={product.name}
-            className="w-full h-auto object-cover rounded-t-lg md:rounded-l-lg md:rounded-tr-none"
-          />
+      <main className="max-w-6xl mx-auto p-8">
+        <h1 className="text-4xl font-bold mb-8">Shop All Products</h1>
 
-          <div className="p-6 flex flex-col">
-            <h2 className="text-3xl font-bold mb-4">{product.name}</h2>
-            <p className="text-gray-600 mb-6">{product.description}</p>
-            <ul className="list-disc list-inside mb-6 space-y-1">
-              {product.features.map((f, i) => (
-                <li key={i} className="text-gray-700">
-                  {f}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-auto">
-              <span className="text-2xl font-semibold text-green-600">
-                ${product.price.toFixed(2)}
-              </span>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {products.map((p) => (
+            <div
+              key={p.id}
+              className="bg-white rounded-lg shadow hover:shadow-lg transition p-4"
+            >
+              {}
+              <Link href={`/product/${p.slug}`}>
+                <div className="cursor-pointer">
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    className="w-full h-48 object-cover rounded-md mb-4"
+                  />
+                  <h2 className="text-lg font-semibold">{p.name}</h2>
+                  <p className="text-green-600 font-bold">
+                    ${p.price.toFixed(2)}
+                  </p>
+                </div>
+              </Link>
 
-              <button className="ml-4 px-6 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition">
+              {}
+              <button
+                onClick={() => handleAddToCart(p.id)}
+                className="mt-4 bg-black hover:bg-gray-800 text-white py-2 px-6 rounded flex items-center gap-2"
+              >
+                <MdOutlineShoppingCart />
                 Add to Cart
               </button>
-              
             </div>
-          </div>
+          ))}
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-white mt-12 py-6 shadow-inner">
-        <div className="max-w-6xl mx-auto text-center text-gray-500 text-sm">
-          © {new Date().getFullYear()} MyStore. All rights reserved.
-        </div>
-      </footer>
     </div>
   );
 }

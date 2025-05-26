@@ -2,7 +2,6 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
-## database model for storing user info
 class User(db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key = True)
@@ -18,3 +17,9 @@ class Product(db.Model):
     price = db.Column(db.Float, nullable=False)
     description = db.Column(db.Text, nullable=True)
     image = db.Column(db.String(200), nullable=False) 
+
+
+class CartItem(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    product_id = db.Column(db.Integer, nullable=False)
+    quantity = db.Column(db.Integer, default=1)

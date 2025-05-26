@@ -7,7 +7,6 @@ import ProductCard from "../components/ProductCard";
 export default function LandingPage() {
 
   return (
-
     <div className="bg-white flex flex-col min-h-screen rfont-[family-name:var(--font-calibri)]">
     {/* Navbar */}
     <NavBar />
