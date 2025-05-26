@@ -24,7 +24,7 @@ export default function ProfilePage() {
                 <InfoGrid />
             </main>
 
-            <footer className="bg-gray-100">
+            <footer className="bg-white">
                 <Footer />
             </footer>
         </div>

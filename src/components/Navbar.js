@@ -44,7 +44,7 @@ export default function NavBar({ transparent = false }) {
 
           <SignedIn>
             <Link href="/account/profile">
-              <UserButton />
+              profile
             </Link>
           </SignedIn>
 

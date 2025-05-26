@@ -1,4 +1,3 @@
-import { SignedIn } from "@clerk/nextjs";
 import NavBar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ProductCard from "../components/ProductCard";
