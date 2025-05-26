@@ -99,9 +99,9 @@ export default function NavBar() {
 
       <Divider />
 
-      <Link href="/shop">
+      <Link href="/admin">
         <button className="hover:text-yellow-500 transition-all duration-500 ease-in-out">
-          Services
+          Admin Test
         </button>
       </Link>
       </div>
